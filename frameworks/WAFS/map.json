@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFS",
+    "fullname": "AWS Well-Architected Framework - Security Pillar",
+    "description": "This framework focuses on the security pillar. This will help you meet your business and regulatory requirements by following current AWS recommendations. It’s intended for those in technology roles, such as chief technology officers (CTOs), chief information security officers (CSOs/CISOs), architects, developers, and operations team members. The security pillar describes how to take advantage of cloud technologies to protect data, systems, and assets in a way that can improve your security posture.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "SEC01": {
+      "BP01": [
+        "iam.hasOrganization"
+      ],
+      "BP02": [
+        "iam.rootMfaActive",
+        "iam.mfaActive",
+        "iam.rootHasNoAccessKeys",
+        "iam.passwordPolicyStrong",
+        "iam.rootConsoleLogin30days"
+      ],
+      "BP03": [
+        "ec2.EC2ManagedBySSM",
+        "ec2.EC2ManagedInstanceCompliance",
+        "ec2.CodeBuildEnvVarCreds"
+      ],
+      "BP04": [
+        "ec2.EC2ManagedInstanceCompliance",
+        "ec2.CodeBuildEnvVarCreds",
+        "iam.enableGuardDuty",
+        "iam.EnableSecurityHub"
+      ],
+      "BP05": [
+        "ec2.CodeBuildEnvVarCreds",
+        "iam.InlinePolicy",
+        "cloudtrail.EnableCloudTrailLogging"
+      ],
+      "BP06": [
+        "iam.hasOrganization",
+        "ec2.EC2ManagedBySSM"       
+      ],
+      "BP07": [
+        "ec2.EC2ManagedBySSM",
+        "ec2.EC2ManagedInstanceCompliance",
+        "iam.ConformancePackDeployed"
+      ],
+      "BP08": [
+        "iam.EnableSecurityHub",
+        "iam.enableGuardDuty",
+        "iam.ConfigRulesRecentlyUpdated"
+      ]
+    },
+    "SEC02": {
+      "BP01": [
+        "iam.passwordPolicy",
+        "iam.RootHardwareMfaForBreakGlass",
+        "iam.rootMfaActive",
+        "iam.mfaActive"
+      ],
+      "BP02": [
+        "iam.accessKeyRecentlyRotated",
+        "iam.userActive",
+        "iam.ECSTaskDefinitionsPresent"
+      ],
+      "BP03": [
+        "iam.secretsRotationEnabled",
+        "iam.secretsPeriodicallyRotated",
+        "iam.secretsRecentlyAccessed",
+        "iam.secretsUsingCMK"
+      ],
+      "BP04": [
+        "iam.groupEmptyUsers",
+        "iam.InlinePolicy",
+        "iam.iamUserGroupMembership",
+        "iam.InlinePolicyFullAdminAccess"
+      ],
+      "BP05": [
+        
+        "iam.accessKeyRecentlyRotated",
+        "iam.secretsPeriodicallyRotated",
+        "iam.secretsRecentlyAccessed",
+        "iam.userActive"
+      ],
+      "BP06": [
+        "iam.groupEmptyUsers",
+        "iam.iamUserGroupMembership",
+        "iam.InlinePolicy",
+        "iam.InlinePolicyFullAdminAccess",
+        "iam.InlinePolicyFullAccessOneServ"
+      ]
+    },
+    "SEC03": {
+      "BP01": [
+        "ec2.EC2IamProfile",
+        "iam.emrKerberosEnabled",
+        "iam.ECSTaskDefinitionsPresent"
+      ],
+      "BP02": [
+        "iam.ECSTaskNonRootUser",
+        "iam.ECSTaskContainersNonPrivileged",
+        "iam.ECSTaskContainersReadOnly",
+        "efs.AccessPointUserIdentity",
+        "iam.InlinePolicyFullAdminAccess",
+        "iam.InlinePolicyFullAccessOneServ",
+        "iam.policiesBlockedKMS"
+      ],
+      "BP03": [
+        "iam.hasOrganization",
+        "iam.InlinePolicy",
+        "iam.iamUserGroupMembership"
+      ],
+      "BP04": [
+        "iam.accessKeyRecentlyRotated",
+        "iam.secretsRecentlyAccessed"
+      ],
+      "BP05": [
+        "iam.breakGlassRoleExists",
+        "iam.breakGlassRequiresHardwareMfa",
+        "iam.breakGlassShortSessionDuration",
+        "iam.breakGlassAuditedAndAlerted"
+      ],
+      "BP06": [
+        "ec2.VPCFlowLogEnabled",
+        "opensearch.DomainWithinVPC",
+        "lambda.lambdaInsideVpc"
+      ],
+      "BP07": [
+        "iam.iamUserGroupMembership",
+        "iam.rootHasNoAccessKeys"
+      ],
+      "BP08": [
+        "iam.dmsReplicationNotPublic",
+        "iam.ssmDocumentsNotPublic",
+        "rds.SnapshotRDSIsPublic",
+        "s3.PublicAccessBlock"
+      ],
+      "BP09": [
+        "ec2.EBSSnapshotIsPublic",
+        "ec2.EC2InstancePublicIP",
+        "iam.EmrMasterNoPublicIp",
+        "rds.PubliclyAccessible",
+        "redshift.PubliclyAccessible",
+        "s3.S3AccountPublicAccessBlock",
+        "s3.PublicAccessBlock",
+        "s3.PublicReadAccessBlock",
+        "lambda.lambdaPublicAccess",
+        "ec2.EC2SubnetAutoPublicIP",
+        "ec2.ASGPublicIP",
+        "iam.SagemakerDirectInternet"
+      ]
+    },
+    "SEC04": {
+      "BP01": [
+        "apigateway.ExecutionLogging",
+        "opensearch.AuditLogs",
+        "opensearch.SearchSlowLogs",
+        "ec2.ELBLogging",
+        "rds.MYSQL__LogsGeneral",
+        "s3.BucketLogging",
+        "ec2.VPCFlowLogEnabled",
+        "red.AuditLogging"
+      ],
+      "BP02": [
+        "cloudwatch.trailWithCWLogsWithoutMetrics",
+        "cloudtrail.HasDataEventsCaptured",
+        "cloudtrail.HasOneMultiRegionTrail",
+        "guardduty.Settings",
+        "iam.EnableSecurityHub"
+      ],
+      "BP03": [
+        "sqs.QueueMonitoring"
+      ],
+      "BP04": [
+        "guardduty.Settings",
+        "iam.EnableSecurityHub"
+      ]
+    },
+    "SEC05": {
+      "BP01": [
+        "iam.ElasticsearchInVPC",
+        "opensearch.DomainWithinVPC",                    
+        "ec2.VPCFlowLogEnabled",                         
+        "lambda.lambdaInsideVpc",
+        "redshift.EnhancedVpcRouting",
+        "ec2.EC2SubnetAutoPublicIP"
+      ],
+      "BP02": [
+        "ec2.SGAllPortOpenToAll",                     
+        "ec2.SGDefaultInUsed",
+        "ec2.SGRuleNumber",
+        "ec2.SGAllTCPOpen",
+        "ec2.SGAllUDPOpen",
+        "ec2.SGAllPortOpen",
+        "ec2.EC2InstancePublicIP"
+      ],
+      "BP03": [
+        "ec2.ELBEnableWAF",
+        "apigateway.WAFWACL",
+        "iam.enableGuardDuty",
+        "ec2.ELBEnableWAFRuleNotEmpty",
+        "ec2.APIGatewayEnableWAF",
+        "ec2.WAFRuleGroups",
+        "ec2.WAFWebACLs"
+      ],
+      "BP04": [
+        "ec2.VPCFlowLogEnabled",
+        "ec2.NACLAssociated"
+      ]
+    },
+    "SEC06": {
+      "BP01": [
+        "rds.AutoMinorVersionUpgrade",                 
+        "redshift.MaintenanceWindow",
+        "iam.EBSManagedUpdates",
+        "iam.ECSFargateLatestPlatformVersion",
+        "ec2.EC2ManagedInstanceCompliance",
+        "iam.ECRImageScanning",
+        "iam.ECSContainerInsights"
+      ],
+      "BP02": [
+        "ec2.EC2IamProfile",
+        "ec2.EC2InstancePublicIP",
+        "lambda.lambdaInsideVpc",
+        "ec2.ASGIMDSv2"
+      ],
+      "BP03": [
+        "cloudtrail.LogFileValidationEnabled",                    
+        "cloudtrail.HasOneMultiRegionTrail",
+        "cloudtrail.HasCoverGlobalServices"
+      ],
+      "BP04": [
+        "ec2.EC2ManagedBySSM",
+        "ec2.EC2ManagedInstanceCompliance",
+        "ec2.EC2Stopped"
+      ],
+      "BP05": [
+        "ec2.EC2ENISG",
+        "ec2.EBSNotAttached",
+        "ec2.EC2MultiENI"
+      ]
+    },
+    "SEC07": {
+      "BP01": [
+        "s3.SSEWithKMS",
+        "kms.KeyRotationEnabled"
+      ],
+      "BP02": [
+        "s3.SSEWithKMS",
+        "dynamodb.DynamoDbEncryptionAtRest",
+        "rds.StorageEncrypted",
+        "dynamodb.DynamoDbEncryptionAtRest",
+        "efs.EncryptedAtRest",
+        "kms.KeyRotationEnabled"
+      ],
+      "BP03": [
+        "iam.BackupPlanFrequencyAndRetention"
+      ],
+      "BP04": [
+        "s3.MacieToEnable"
+      ]
+    },
+    "SEC08": {
+      "BP01": [
+        "iam.secretsUsingCMK",
+        "kms.KeyInPendingDeletion",
+        "cloudtrail.SNSTopicEncryptedWithKMS",
+        "iam.SagemakerEndpointKMS",
+        "iam.SagemakerDirectInternet"
+      ],
+      "BP02": [
+        "iam.CachingEnabled",
+        "iam.BackupRecoveryPointEncryption",
+        "ec2.CodeBuildArtifactEncryption",
+        "cloudtrail.RequiresKmsKey",
+        "cloudwatch.CWLogGroupEncryption",
+        "dynamodb.DynamoDbEncryptionAtRest",
+        "ec2.EBSEncrypted",
+        "efs.EncryptedAtRest",
+        "rds.StorageEncrypted",
+        "redshift.EncryptedAtRest",
+        "s3.SSEWithKMS"
+      ],
+      "BP03": [
+        "iam.BackupRecoveryPointEncryption",
+        "s3.BucketVersioning",
+        "iam.hasOrganization"
+      ],
+      "BP04": [
+        "s3.S3AccountPublicAccessBlock",
+        "s3.PublicAccessBlock",
+        "s3.PublicReadAccessBlock",
+        "s3.PublicWriteAccessBlock"
+      ]
+    },
+    "SEC09": {
+      "BP01": [
+        "iam.ACMCertificateExpiration",            
+        "ec2.ELBV2ListenerACMCertRequired",
+        "ec2.ELBListenerACMCertRequired"
+      ],
+      "BP02": [
+        "ec2.ALBHTTPToHTTPSRedirection",                
+        "ec2.ALBDropInvalidHeaders",                           
+        "apigateway.RequireAuthForCacheControl",
+        "opensearch.NodeToNodeEncryption",    
+        "iam.ElasticsearchNodeToNodeEncryption",
+        "redshift.EncryptedAtRest",
+        "ec2.ELBListenerInsecure"
+      ],
+      "BP03": [
+        "ec2.VPCFlowLogEnabled",
+        "iam.enableGuardDuty"
+      ]
+    },
+    "SEC10": {
+      "BP01": [
+        "iam.EnableSecurityHub",
+        "iam.enableGuardDuty",
+        "iam.irTrainingCompleted"
+      ],
+      "BP02": [
+        "iam.incidentRunbookValidator"
+      ],
+      "BP03": [
+        "cloudtrail.HasOneMultiRegionTrail",
+        "cloudtrail.LogFileValidationEnabled",
+        "iam.EnableConfigService"                
+      ],
+      "BP04": [
+        "iam.incidentRunbookValidator"
+      ],
+      "BP05": [
+        "iam.AccessAnalyzerFindings"
+      ],
+      "BP06": [        
+        "iam.irTrainingCompleted"
+      ],
+      "BP07": [
+        "iam.EnableSecurityHub",
+        "iam.enableGuardDuty"
+      ],
+      "BP08": [
+        "sqs.QueueMonitoring"
+      ]
+    },
+    "SEC11": {
+      "BP01": [
+        "iam.VendorAssessment"
+      ],
+      "BP02": [
+        "iam.iamUsersWithPermissionsBoundary"
+      ],
+      "BP03": [
+        "iam.ConformancePacksApplied"
+      ],
+      "BP04": [
+        "iam.HavingPolicy"
+      ],
+      "BP05": [
+        "iam.CISBenchmarkEnabled"
+      ],
+      "BP06": [
+        "iam.ComplianceFrameworksApplied"
+      ],
+      "BP07": [
+        "cloudwatch.trailWithCWLogsWithoutMetrics",
+        "cloudtrail.HasDataEventsCaptured",
+        "cloudtrail.HasOneMultiRegionTrail"
+      ],
+      "BP08": [
+        "iam.ServiceControlPolicies"
+      ]
+    }
+  }
+}

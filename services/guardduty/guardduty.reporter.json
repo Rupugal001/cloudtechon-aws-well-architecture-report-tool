@@ -1,0 +1,70 @@
+{
+  "Findings": {
+      "category": "T",
+      "^description": "Custom Page Usage",
+      "downtime": 0,
+      "slowness": 0,
+      "additionalCost": 0,
+      "criticality": "H",
+      "shortDesc": "Findings",
+      "ref": [
+      ]
+  },
+  "UsageStat": {
+      "category": "T",
+      "^description": "Custom Page Usage",
+      "downtime": 0,
+      "slowness": 0,
+      "additionalCost": 0,
+      "criticality": "L",
+      "shortDesc": "UsageStat",
+      "ref": [
+      ]
+  },
+  "FreeTrial": {
+      "category": "T",
+      "^description": "Custom Page Usage",
+      "downtime": 0,
+      "slowness": 0,
+      "additionalCost": 0,
+      "criticality": "M",
+      "shortDesc": "FreeTrial",
+      "ref": [
+      ]
+  },
+  "Settings": {
+      "category": "T",
+      "^description": "Custom Page Usage",
+      "downtime": 0,
+      "slowness": 0,
+      "additionalCost": 0,
+      "criticality": "L",
+      "shortDesc": "Settings",
+      "ref": [
+      ]
+  },
+  "FailMeetingCompliances": {
+      "category": "S",
+      "^description": "You have {$COUNT} findings that breach the SLA that yet to be resolved. Checks if Amazon GuardDuty has findings that are non-archived. The rule is NON_COMPLIANT if GuardDuty has non-archived low/medium/high severity findings older than the specified number in the daysLowSev/daysMediumSev/daysHighSev parameter.",
+      "downtime": -1,
+      "slowness": -1,
+      "additionalCost": 0,
+      "criticality": "H",
+      "shortDesc": "Unresolved items after X days",
+      "ref": [
+        "[Unresolved Items Info Mapping]<https://docs.aws.amazon.com/config/latest/developerguide/guardduty-non-archived-findings.html>"
+      ]
+  },
+  "DelegatedAdmin": {
+      "category": "R",
+      "^description": "Amazon GuardDuty is not configured with a delegated administrator account. A delegated administrator is an AWS account that is authorized to manage GuardDuty for all accounts in your organization. Using a delegated administrator can help streamline the management and monitoring of security findings across multiple accounts.",
+      "downtime": -1,
+      "slowness": -1,
+      "additionalCost": 0,
+      "criticality": "M",
+      "shortDesc": "No Delegated Admin Account",
+      "ref": [
+        "[GuardDuty Delegated Admin]<https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html#guardduty_organizations-delegated-admin>"
+      ]
+  }
+}

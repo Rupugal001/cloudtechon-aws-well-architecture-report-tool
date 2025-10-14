@@ -1,0 +1,1 @@
+{"apigateway": 10, "cloudfront": 8, "cloudtrail": 18, "cloudwatch": 18, "dynamodb": 24, "ec2": 61, "efs": 4, "eks": 7, "elasticache": 10, "guardduty": 5, "iam": 38, "kms": 4, "lambda": 15, "opensearch": 22, "rds": 82, "redshift": 16, "s3": 18, "sqs": 11}

@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFR",
+    "fullname": "AWS Well-Architected Framework - Reliability",
+    "description": "This framework focuses on the reliability pillar. This will help you meet your business and regulatory requirements by following current AWS recommendations. It’s intended for those in technology roles, such as chief technology officers (CTOs), chief information security officers (CSOs/CISOs), architects, developers, and operations team members. The reliability pillar describes how to take advantage of cloud technologies to protect data, systems, and assets in a way that can improve your security posture.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "SEC01": {
+      "BP01": ["dynamodb.wcuServiceLimit", "dynamodb.rcuServiceLimit"],
+      "BP02": ["lambda.lambdaConcurrency"],
+      "BP03": ["iam.ECSTaskMemoryHardLimit"],
+      "BP04": ["dynamodb.wcuServiceLimit", "dynamodb.rcuServiceLimit"],
+      "BP05": ["lambda.lambdaConcurrency"],
+      "BP06": ["iam.ECSTaskMemoryHardLimit"]
+    },
+    "SEC02": {
+      "BP01": ["ec2.EC2MultiVPN"],
+      "BP02": ["ec2.EC2MultiVPN"],
+      "BP03": ["ec2.EC2InVPC"],
+      "BP04": ["redshift.EnhancedVpcRouting"],
+      "BP05": ["ec2.EC2NonOverlappingVPCs"]
+    },
+    "SEC03": {
+      "BP01": ["cloudwatch.CloudWatchAlarms"],
+      "BP02": ["cloudwatch.trailWithCWLogsWithoutMetrics"],
+      "BP03": ["cloudtrail.SNSAlertsIntegrated"]
+    },
+    "SEC04": {
+      "BP01": ["cloudwatch.CloudWatchAlarms","ec2.EC2AutoRecovery"],
+      "BP02": ["ec2.ASGELBHealthCheckValidation"],
+      "BP03": ["lambda.lambdaControlAndLimitRetries"],
+      "BP04": ["cloudwatch.CloudWatchAlarms"]
+    },
+    "SEC05":{
+      "BP01": ["lambda.lambdaDeadLetterQueueDisabled", "lambda.lambdaGracefulDegradation"],
+      "BP02": ["lambda.lambdaReservedConcurrencyDisabled"],
+      "BP03": ["lambda.lambdaControlAndLimitRetries"],
+      "BP04": ["lambda.lambdaDeadLetterQueueDisabled", "lambda.lambdaGracefulDegradation"],
+      "BP05": ["lambda.lambdaClientTimeouts"],
+      "BP06": ["lambda.Stateless"],
+      "BP07": ["lambda.EmergencyLevers"]
+    },
+    "SEC06":{
+      "BP01": [
+        "ec2.EC2DetailedMonitor", 
+        "iam.ECSContainerInsights", 
+        "rds.MonitoringIntervalTooLow", 
+        "iam.EBSManagedUpdates"
+      ],
+      "BP02": [
+        "redshift.EnhancedVpcRouting",
+        "sqs.QueueMonitoring"
+      ],
+      "BP03": [
+        "lambda.EmergencyLevers",
+        "sqs.QueueMonitoring"
+      ],
+      "BP04": [
+        "ec2.ASGELBHealthCheckValidation",
+        "iam.enableGuardDuty",
+        "guardduty.DelegatedAdmin",
+        "iam.EnableSecurityHub"
+      ],
+      "BP05": [
+        "cloudtrail.HasCoverGlobalServices",
+        "cloudtrail.CloudWatchLogsLogGroupArn",
+        "cloudtrail.HasOneMultiRegionTrail",
+        "s3.BucketLogging",
+        "cloudtrail.HasS3DataEventsCaptured",
+        "ec2.ELBLogging",
+        "iam.ElasticsearchLoggingEnabled",
+        "opensearch.SearchSlowLogs",
+        "rds.MYSQL__LogsGeneral",
+        "apigateway.ExecutionLogging"
+      ],
+      "BP06": [
+        "iam.EnableSecurityHub",
+        "ec2.VPCFlowLogEnabled"
+      ],
+      "BP07": ["apigateway.XRayTracing"]
+    },
+    "SEC07":{
+      "BP01": [
+        "dynamodb.DynamoDbAutoScalingEnabled",
+        "ec2.ASGELBHealthCheckValidation"
+      ],
+      "BP02": [
+        "ec2.ASGELBHealthCheckValidation"
+      ],
+      "BP03": [
+        "dynamodb.DynamoDbAutoScalingEnabled"
+      ],
+      "BP04": []
+    },
+    "SEC08":{
+      "BP01": ["ec2.EC2ManagedInstanceCompliance"],
+      "BP02": [
+        "redshift.MaintenanceWindow",
+        "redshift.AutomaticUpgrades"
+      ],
+      "BP03": ["rds.AutoMinorVersionUpgrade"],
+      "BP04": ["ec2.PatchCompliance"],
+      "BP05": ["ec2.SSMAssociationCompliance"]
+    },
+    "SEC09":{
+      "BP01": [
+        "iam.BackupPlanFrequencyAndRetention",
+        "iam.RecoveryPointRetention",
+        "rds.BackupEnabled",
+        "dynamodb.disabledBackup",
+        "dynamodb.enabledPointInTimeRecovery",
+        "ec2.EBSBackup",
+        "elasticache.AutomatedBackup",
+        "redshift.AutomaticSnapshots",
+        "s3.BucketVersioning"
+      ],
+      "BP02": [
+        "dynamodb.DynamoDbEncryptionAtRest",
+        "ec2.EBSEncrypted",
+        "efs.EncryptedAtRest",
+        "rds.StorageEncrypted",
+        "redshift.EncryptedWithKMS",
+        "s3.ServerSideEncrypted",
+        "dynamodb.deleteTableProtection",
+        "ec2.ELBDeletionProtection"
+      ],
+      "BP03": [
+        "rds.BackupRetentionPeriod",
+        "dynamodb.enabledPointInTimeRecovery",
+        "elasticache.AutomatedBackup",
+        "redshift.AutomaticSnapshots",
+        "s3.BucketReplication"
+      ],
+      "BP04": [
+        "s3.BucketVersioning",
+        "s3.BucketReplication",
+        "iam.BackupPlanFrequencyAndRetention"
+      ]
+    },
+    "SEC10":{
+      "BP01": [
+        "ec2.ASGClassicLBMultiAZ",  
+        "lambda.lambdaMultiAZ",
+        "rds.MultiAZ",
+        "ec2.EC2MultiVPN"
+      ],
+      "BP02": [
+        "ec2.ELBCrossZone",
+        "opensearch.AvailabilityZones"
+      ],
+      "BP03": [
+        "rds.MultiAZ",
+        "lambda.lambdaMultiAZ"
+      ]
+    },
+    "SEC11":{
+      "BP01": [
+        "cloudwatch.CloudWatchAlarms",
+        "cloudwatch.trailWithCWLogsWithoutMetrics",
+        "apigateway.XRayTracing"
+      ],
+      "BP02": [
+        "ec2.ASGELBHealthCheckValidation",
+        "rds.MultiAZ"
+      ],
+      "BP03": ["ec2.EBSUpToDateSnapshot"],
+      "BP04": ["rds.BackupEnabled"],
+      "BP05": [
+        "ec2.EC2LowUtilization", 
+        "rds.RightSizingCpuMonthMaxLT50pct", 
+        "rds.RightSizingCpuLowUsageDetected"
+      ],
+      "BP06": [
+        "cloudwatch.CloudWatchAlarms",
+        "cloudtrail.SNSAlertsIntegrated"
+      ],
+      "BP07": [
+        "s3.BucketVersioning",
+        "rds.MultiAZ"
+      ]
+    },
+    "SEC12":{
+      "BP01": [
+        "cloudwatch.CloudWatchAlarms"
+      ],
+      "BP02": [
+        "cloudtrail.RecentDeliveryFailures"
+      ],
+      "BP03": [
+        "iam.BackupPlanFrequencyAndRetention"
+      ],
+      "BP04": [
+        "iam.BackupPlanFrequencyAndRetention"
+      ],
+      "BP05": [
+        "iam.ASGInstancesRemoved"
+      ]
+    },
+    "SEC13":{
+      "BP01": ["iam.rpoRtoDefined"],
+      "BP02": ["s3.BucketReplication"],
+      "BP03": ["cloudtrail.DRDrillsPerformed"],
+      "BP04": ["iam.BackupPlanFrequencyAndRetention"],
+      "BP05": ["iam.BackupPlanFrequencyAndRetention"]
+    }
+  }
+}

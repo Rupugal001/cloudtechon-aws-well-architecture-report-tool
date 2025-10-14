@@ -1,0 +1,301 @@
+{
+    "lambdaURLInUsed":{
+        "category": "SO",
+        "^description": "Function URLs: {$COUNT} of your Lambda URL are enabled. Please make sure it's used with caution and proper security configuration.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "L",
+        "needFullTest": 1,
+        "shortDesc": "Function URLs In Used",
+        "ref": [
+            "[Lambda function URLs]<https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html>"    
+        ]
+    },
+    "lambdaMissingRole":{
+        "category": "S",
+        "^description": "Execution Role: Role of {$COUNT} of your Lambda is not exist. Please assign a valid role to your Lambda functions.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Lambda Missing Roles",
+        "ref": [
+            "[Lambda execution role]<https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html>"    
+        ]
+    },
+    "lambdaURLWithoutAuth":{
+        "category": "S",
+        "^description": "Function URLs AuthType: {$COUNT} of your Lambda function URLs does not configured for authentication type. Please ensure proper authentication has been configured",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "H",
+        "needFullTest": 1,
+        "shortDesc": "Function URLs AuthType NONE",
+        "ref": [
+            "[Security and Auth Model for Lambda function URLs]<https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html>"    
+        ]
+    },
+    "lambdaCodeSigningDisabled":{
+        "category": "S",
+        "^description": "Code Signing: Code Signing has not been enabled for {$COUNT} of your Lambda. Enable Code Signing to ensure only trusted code run in your Lambda functions",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Code Signing Disabled",
+        "ref": [
+            "[Configuring code signing for AWS Lambda]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html>"    
+        ]
+    },
+    "lambdaDeadLetterQueueDisabled":{
+        "category": "O",
+        "^description": "Dead Letter Queue: Dead Letter Queue (DLQ) has not been enabled for {$COUNT} of your Lambda. Enable DLQ to send unprocessed events to SQS or SNS topic.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Dead Letter Queue Disabled",
+        "ref": [
+            "[Dead Letter Queue Configuration]<https://catalog.us-east-1.prod.workshops.aws/workshops/63320e83-6abc-493d-83d8-f822584fb3cb/en-US/sns/error-handling>"    
+        ]
+    },
+    "lambdaCMKEncryptionDisabled":{
+        "category": "S",
+        "^description": "Customer Managed Key: CMK is not enabled for {$COUNT} of your Lambda funciton. Enable CMK to enjoy a more granular control over the data encryption and decryption process.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "L",
+        "needFullTest": 0,
+        "shortDesc": "Customer Managed Key Not In Used",
+        "ref": [
+            "[Lambda securing environment variables]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption>"    
+        ]
+    },
+    "lambdaEnhancedMonitoringDisabled":{
+        "category": "O",
+        "^description": "Enhanced Monitoring: Enhanced Monitoring is disabled for {$COUNT} of your Lambda functions. Enabled enhanced monitoring to better monitor, troubleshoot and optimize functions.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "M",
+        "needFullTest": 0,
+        "shortDesc": "Enhanced Monitoring Disabled",
+        "ref": [
+            "[Using Lambda Insights in Amazon CloudWatch]<https://docs.aws.amazon.com/lambda/latest/dg/monitoring-insights.html>"    
+        ]
+    },
+    "lambdaReservedConcurrencyDisabled":{
+        "category": "P",
+        "^description": "Provisioned Concurrency: Provisioned Concurrency is disabled for {$COUNT} of your Lambda function. Enable provision concurrency to improve Lambda scaling performance.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "L",
+        "needFullTest": 1,
+        "shortDesc": "Provisioned Concurrency Disabled",
+        "ref": [
+            "[Configuring provisioned concurrency]<https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html>"    
+        ]
+    },
+    "lambdaTracingDisabled":{
+        "category": "O",
+        "^description": "Tracing: Tracing feature is diabled for {$COUNT} of your Lambda function. Enable tracing for better visibility of execution and performance of functions.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "M",
+        "needFullTest": 0,
+        "shortDesc": "Tracing Disabled",
+        "ref": [
+            "[Using AWS Lambda with AWS X-Ray]<https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html>"    
+        ]
+    },
+    "lambdaRoleReused":{
+        "category": "S",
+        "^description": "Execution Role Reused: {$COUNT} of your Lambda function is having the same execution role. Please create isolated execution role to provide least privilege permission to the Lambda function.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Execution Role Reused",
+        "ref": [
+            "[Lambda execution role]<https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html>"    
+        ]
+    },
+    "lambdaRuntimeUpdate":{
+        "category": "S",
+        "^description": "Runtime Update Available: New runtime version available for {$COUNT} of your Lambda. Please update your Lambda runtime to enjoy the latest features and patches.",
+        "downtime": 1,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "L",
+        "needFullTest": 1,
+        "shortDesc": "Runtime Update Available",
+        "ref": [
+            "[Lambda runtimes]<https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html>"    
+        ]
+    },
+    "lambdaNotInUsed7Days":{
+        "category": "O",
+        "^description": "Function not in used: {$COUNT} of your Lambda is not invoked in past 7 days. Remove unused function to maintain up-to-date environment and control costs",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "L",
+        "needFullTest": 0,
+        "shortDesc": "Function not in used for 7 days",
+        "ref": [
+            "[API to delete Lambda]<https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html>"    
+        ]
+    },
+    "lambdaNotInUsed30Days":{
+        "category": "O",
+        "^description": "Function not in used: {$COUNT} of your Lambda is not invoked in past 30 days. Remove unused function to maintain up-to-date environment and control costs",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "H",
+        "needFullTest": 0,
+        "shortDesc": "Function not in used for 30 days",
+        "ref": [
+            "[API to delete Lambda]<https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html>" 
+        ]
+    },
+    "lambdaPublicAccess":{
+        "category": "S",
+        "^description": "Function with public access: {$COUNT} of your Lambda is allowed public access in resource-based policy. Please restrict access to authorized principals only",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "H",
+        "needFullTest": 0,
+        "shortDesc": "Function with public access",
+        "ref": [
+            "[Using resource-based policies for Lambda]<https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html>"    
+        ]
+    },
+    "UseArmArchitecture":{
+        "category": "P",
+        "^description": "{$COUNT} of your Lambda function(s) are not using arm64 architecture. Lambda functions that use arm64 architecture (AWS Graviton2 processor) can achieve significantly better price and performance than the equivalent function running on x86_64 architecture. Consider using arm64 for compute-intensive applications such as high-performance computing, video encoding, and simulation workloads.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "criticality": "M",
+        "shortDesc": "Use Arm64 Architecture",
+        "ref": [
+            "[Advantages of using arm64]<https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html>"    
+        ]
+    },
+    "lambdaInsideVpc":{
+        "category": "S",
+        "^description": "Lambda Inside VPC: {$COUNT} of your Lambda function is not configured inside VPC. Consider configuring Lambda inside VPC to securely access resources in your private network.",
+        "downtime": 1,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Configure Lambda inside VPC",
+        "ref": [
+            "[Configuring a Lambda function to access resources in a VPC]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html>"    
+        ]
+    },
+    "lambdaConcurrency":{
+        "category": "R",
+        "^description": "Reserved Concurrency Set: {$COUNT} of your Lambda function is configured with reserved concurrency. Reserved concurrency can limit the number of concurrent executions for a function, which can lead to throttling and impact application performance. Review and adjust reserved concurrency settings as needed to ensure optimal performance.",
+        "downtime": 1,
+        "slowness": 1,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Reserved Concurrency Set",
+        "ref": [
+            "[Managing Lambda function concurrency]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html>"    
+        ]
+    },
+    "lambdaGracefulDegradation":{
+        "category": "R",
+        "^description": "Graceful Degradation: {$COUNT} of your Lambda function is not configured with Dead Letter Queue (DLQ) target ARN. Configuring a DLQ target ARN allows unprocessed events to be sent to an SQS queue or SNS topic, enabling you to handle failures gracefully and ensuring that no events are lost.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Graceful Degradation Not Configured",
+        "ref": [
+            "[Dead Letter Queue Configuration]<https://catalog.us-east-1.prod.workshops.aws/workshops/63320e83-6abc-493d-83d8-f822584fb3cb/en-US/sns/error-handling>"    
+        ]
+    },
+    "lambdaControlAndLimitRetries":{
+        "category": "R",
+        "^description": "Control and Limit Retries: {$COUNT} of your Lambda function is not configured to control and limit retries. Configuring retry behavior helps manage the number of retry attempts for failed invocations, reducing the risk of overwhelming downstream systems and improving overall application reliability.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Control and Limit Retries Not Configured",
+        "ref": [
+            "[Retry behavior for asynchronous invocation]<https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-retries>"    
+        ]
+    },
+    "lambdaClientTimeouts":{
+        "category": "R",
+        "^description": "Client Timeouts: {$COUNT} of your Lambda function has a timeout setting of less than 3 seconds. Setting an appropriate timeout value is crucial to ensure that your function has enough time to complete its tasks without being prematurely terminated. Consider increasing the timeout value to better accommodate the expected execution time of your function.",
+        "downtime": 0,
+        "slowness": 1,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Client Timeouts Less Than 3 Seconds",
+        "ref": [
+            "[Lambda function configuration]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html>"    
+        ]
+    },
+    "Stateless":{
+        "category": "R",
+        "^description": "Stateless Design: {$COUNT} of your Lambda function could not be automatically validated for statelessness. Stateless functions are easier to scale and manage, as they do not rely on any internal state or session information. Review your function design to ensure it adheres to stateless principles, which can help improve scalability and reliability.",
+        "downtime": 0,
+        "slowness": 1,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Stateless Design Not Validated",
+        "ref": [
+            "[Best practices for working with AWS Lambda functions]<https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html>"    
+        ]
+    },
+    "EmergencyLevers":{
+        "category": "R",
+        "^description": "Emergency Levers: {$COUNT} of your Lambda function is not configured with reserved concurrency. Configuring reserved concurrency can act as an emergency lever to limit the number of concurrent executions for a function, helping to protect downstream systems from being overwhelmed during traffic spikes or unexpected events.",
+        "downtime": 0,
+        "slowness": 1,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Emergency Levers Not Configured",
+        "ref": [
+            "[Managing Lambda function concurrency]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html>"    
+        ]
+    },
+    "lambdaMultiAZ":{
+        "category": "R",
+        "^description": "Multi-AZ Deployment: {$COUNT} of your Lambda function is not configured for multi-AZ deployment. Configuring your function for multi-AZ deployment helps ensure high availability and fault tolerance by distributing function instances across multiple availability zones.",
+        "downtime": 1,
+        "slowness": 1,
+        "additionalCost": 0,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Multi-AZ Deployment Not Configured",
+        "ref": [
+            "[Configuring a Lambda function to access resources in a VPC]<https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html>"    
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+from .ElasticacheCommon import ElasticacheCommon
+
+
+class ElasticacheRedis(ElasticacheCommon):
+    defaultPort = 6379
+    def __init__(self, cluster, client, driver_info):
+        super().__init__(cluster, client, driver_info)
+        self._resourceName = cluster['ARN']
+        # self.init()
+
+    def _checkDefaultPort(self):
+        ## Error handling when cluster is creating
+        if self.cluster.get('CacheClusterStatus') in ['creating', 'deleting', 'deleted']:
+            return
+        
+        ports_in_cluster = [node.get('Endpoint').get(
+            'Port') for node in self.cluster.get('CacheNodes')]
+        if any(port == ElasticacheRedis.defaultPort for port in ports_in_cluster):
+            self.results['DefaultPort'] = [-1, ElasticacheRedis.defaultPort]
+            
+    def _check_elasticache_backup(self):
+        # Only Redis support backup
+        if self.cluster.get('Engine') == 'redis':
+            self.results['AutomatedBackup'] = [1, 'Enabled']
+            if self.cluster.get('SnapshotRetentionLimit', 0) == 0:
+                self.results['AutomatedBackup'] = [-1, 'Disabled']
+            else:
+                self.results['AutomatedBackup'] = [1, f"Retention: {self.cluster.get('SnapshotRetentionLimit')} days"]
+        elif self.cluster.get('Engine') == 'valkey':
+            self.results['AutomatedBackup'] = [-1, 'Not supported for Valkey']
+            

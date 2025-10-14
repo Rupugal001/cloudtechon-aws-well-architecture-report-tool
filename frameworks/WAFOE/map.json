@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFOE",
+    "fullname": "AWS Well-Architected Framework - Operational Excellence Pillar",
+    "description": "This framework focuses on the operational excellence pillar. This will help you meet your business and regulatory requirements by following current AWS recommendations. It’s intended for those in technology roles, such as chief technology officers (CTOs), chief information security officers (CSOs/CISOs), architects, developers, and operations team members. The operational excellence pillar describes how to take advantage of cloud technologies to protect data, systems, and assets in a way that can improve your security posture.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "SEC01": {
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"]
+    },
+    "SEC02": {
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"]
+    },
+    "SEC03": {
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"],
+      "BP07": ["iam.hasOrganization"]
+    },
+    "SEC04": {
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"]
+    },
+    "SEC05":{
+      "BP01": ["cloudfront.$length"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"],
+      "BP07": ["iam.hasOrganization"],
+      "BP08": ["iam.hasOrganization"],
+      "BP09": ["iam.hasOrganization"],
+      "BP10": ["iam.hasOrganization"]
+    },
+    "SEC06":{
+      "BP01": ["iam.enableGuardDuty"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"]
+    },
+    "SEC07":{
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"]
+    },
+    "SEC08":{
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"]
+    },
+    "SEC09":{
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"]
+    },
+    "SEC10":{
+      "BP01": ["iam.hasOrganization"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"],
+      "BP07": ["iam.hasOrganization"]
+    },
+    "SEC11":{
+      "BP01": ["cloudfront.$length"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["iam.hasOrganization"],
+      "BP04": ["iam.hasOrganization"],
+      "BP05": ["iam.hasOrganization"],
+      "BP06": ["iam.hasOrganization"],
+      "BP07": ["iam.hasOrganization"],
+      "BP08": ["iam.hasOrganization"],
+      "BP09": ["iam.hasOrganization"]
+    }
+  }
+}

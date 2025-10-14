@@ -1,0 +1,83 @@
+{
+    "EncryptedAtRest": {
+        "category": "S",
+        "^description": "EFS is not encrypted at rest. You can create a new encrypted EFS and migrate over the files into it",
+        "downtime": 1,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "H",
+        "needFullTest": 1,
+        "shortDesc": "Migrate your files to encrypted EFS",
+        "ref": [
+            "[EFS Encryption at Rest]<https://docs.aws.amazon.com/efs/latest/ug/encryption-at-rest.html>"    
+        ]
+    },
+    "EnabledLifecycle": {
+        "category": "C",
+        "^description": "",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "criticality": "I",
+        "needFullTest": 0,
+        "shortDesc": "Enable Lifecycle Management for EFS.",
+        "ref": [
+            "[EFS Lifecycle]<https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html>"    
+        ]
+    },
+    "AutomatedBackup": {
+        "category": "R",
+        "^description": "Automatic backup for EFS is disabled, you can choose to enable it or setup customized backup plan through AWS Backup. You can ignore this if backup is enabled in AWS Backup.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "H",
+        "needFullTest": 0,
+        "shortDesc": "Enable automatic backup for EFS.",
+        "ref": [
+            "[EFS Backup]<https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html>"    
+        ]
+    },
+    "EFSBackup":{
+        "category": "R",
+        "^description": "EFS is not part of any backup plan, you can create a backup plan in AWS Backup to protect your EFS file system.",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "H",
+        "needFullTest": 0,
+        "shortDesc": "Add EFS to a backup plan in AWS Backup.",
+        "ref": [
+            "[AWS Backup]<https://docs.aws.amazon.com/backup/latest/devguide/whatisbackup.html>",
+            "[EFS Backup]<https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html>"    
+        ]
+    },
+    "IsSingleAZ": {
+        "category": "R",
+        "^description": "Using EFS in SingleAZ is only suitable for development workload. It offers up to 47% cost saving compare to EFS Standard storage classes. It is not resilient to the loss of the Availability Zone.",
+        "downtime": 1,
+        "slowness": 0,
+        "additionalCost": 1,
+        "criticality": "M",
+        "needFullTest": 1,
+        "shortDesc": "Recreate new Regional EFS and migrate data over",
+        "ref": [
+            "[Create EFS]<https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html>",
+            "[Options to transfer data]<https://docs.aws.amazon.com/efs/latest/ug/transfer-data-to-efs.html>",
+            "[Comparison between Regional vs SingleAZ]<https://docs.aws.amazon.com/efs/latest/ug/features.html>"
+        ]
+    },
+    "AccessPointUserIdentity": {
+        "category": "S",
+        "^description": "EFS access points should be owned by the EFS file system owner. The following access points are not owned by the file system: {$ACCESS_POINTS}.",
+        "shortDesc": "EFS access points not owned by file system",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 0,
+        "ref": [
+            "[Amazon EFS Access Points]<https://docs.aws.amazon.com/efs/latest/ug/working-with-access-points.html>"
+        ]
+    }
+}
