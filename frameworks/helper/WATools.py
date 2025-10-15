@@ -92,7 +92,7 @@ class WATools():
             'Environment': 'PRODUCTION',
             'AccountIds': [self.stsInfo['Account']],
             'AwsRegions': [self.region],
-            'ReviewOwner': "843253", # self.stsInfo['Arn'],
+            'ReviewOwner': "2190870", # self.stsInfo['Arn'],
             'Lenses': [self.waInfo['LensesAlias']]
         }
 

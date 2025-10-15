@@ -158,7 +158,7 @@
         "rds.MYSQL__LogsGeneral",
         "s3.BucketLogging",
         "ec2.VPCFlowLogEnabled",
-        "red.AuditLogging"
+        "redshift.AuditLogging"
       ],
       "BP02": [
         "cloudwatch.trailWithCWLogsWithoutMetrics",
